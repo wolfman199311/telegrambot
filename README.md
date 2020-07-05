@@ -12,7 +12,7 @@ Select **only one** of the options below.
 
 ### Option 2: Firebase CLI
 1. Create [Dialogflow Agent](https://console.dialogflow.com/)
-2. `git clone https://github.com/dialogflow/fulfillment-webhook-nodejs.git`
+2. `git clone https://github.com/wolfman199311/telegrambot.git`
 3. `cd` to the `functions` directory
 4. `npm install`
 5. Install the Firebase CLI by running `npm install -g firebase-tools`
