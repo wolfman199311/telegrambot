@@ -20,7 +20,7 @@ const functions = require('firebase-functions');
 const { WebhookClient } = require('dialogflow-fulfillment');
 const { Card, Suggestion } = require('dialogflow-fulfillment');
 const { Payload } = require("dialogflow-fulfillment");
-const apikey = '0f8d97f4fcmsh4c760502e8f8225p144410jsn87db86e6de40';
+const apikey = '<apikey>';
 const requests = require('request');
 var { countries } = require('country-data');
 var rp = require('request-promise');
@@ -28,19 +28,10 @@ const { error } = require('actions-on-google/dist/common');
 var XLSX = require('xlsx');
 const OnetWebService = require('./OnetWebService')
 const { google } = require('googleapis');
-const calendarId = "gvuo8kjjeg5ph9no4bf16t81i0@group.calendar.google.com"
+const calendarId = "<your calendar id>"
 var appointment_type = 'chatbot';
 const serviceAccount = {
-  "type": "service_account",
-  "project_id": "plusbot-bnqe",
-  "private_key_id": "f7bdc4e5d5cea29865ff9738d56ee82832496ee2",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDqqnhwBlEK1PY2\ncjTk9fn5fmew8CWbCS9LKqzCPPW75abEbzgNFiFetktBhCq8XeABRYDdA3ZKAMaK\nbYG8ZjIh+xPW+tGZlJ2DmScb7gqrGXQsmT607WDhxMwCDU6w26f1y9YpZ5mCjgvi\nZ8KYRp2MMFTmNPzT53CIx50WIJp0ZRiGR+x9F03EK9zZ+U1T9YQWMKE9QWpGeLa1\nM56SnNP9sC1bkjPATJXM3kvb5/bquLabkYk6317a2t16zbv0AZtLFgTEsQTUrCar\nf5UZHcPuG8P7w7mhrzPxyzHzo7vOflRafcZYgVCMES+ZGLxMlxsbSawKjF44ezsf\nNtRApx8JAgMBAAECggEABW3evfbDcrz1GlLfmul++FD+nKcds53NiI9q8k5/P/Li\n/hn1ocXgjUSp7pDcfUGtwFHHlrVxC+rDLSo17XIu2D7rGVbxuPwpfcUyFLEX8Zfz\n6mE8RGrWijqnnqeIqcpXMzZdVNVnBZB8QWd1ptjBZeArYq0YqV1qKtv1bDDiae1u\ngZYZ4CsDIi5aByMBL1q4do8qeaYVG/U24lDxXwK2hp3uF38tTIVzXTKcBTNU7UXR\nVnoSufTTQCTizj2kxxIKLf/Riy4i/H3KumiIodYsCYTqC6ceHp8C/CSAHsgm5HZj\nhEtK4UQoIxcPmVSFPMean9YGSYvHOTbVFN8aPDBYdQKBgQD3FWDTmHor7Fxo+boO\nunFhHaaSAGk8nU4EUnyZq6M8KK3Oy9Ka2/oWFkoQO6T9z/XaXP+JQZHZAlNfbYLy\ns+wkW/wdFX7Er3IhHl4NsjU2lb+PbtVwj/Crx4QZqOv7yW0hRrdHNOLB/7VhC3cd\nRhXdAi2wRoyUa9k3h5ZSxfaTJQKBgQDzImAImNMb/Egi4MpP+LbcZEcxq2xfzHvO\nyZD09HfANoU5uZ3y2U5BTXtrUAEa2rr9n+DFQW4S1JSrkw/xcJIxfjD8fmn7J1UV\nQveQ4PgFpuC7WyNsW7cVyzmAVSPG1qGvkGjjlmw3o8BcJFdHbrRVByUqDrLhJHYQ\n+v/BH8HJFQKBgEx+/+VCtcBXgxy1BBd/PY71oRZerjYn9Xl9GDpzWyxK49S8Yc20\nAS9JY1C3RpOWCOW8GRkjhcYL5EgNHZeKgLeZCuruNrsqHkmGn1PaMoNdxVrg04/v\n4HEuagWPuM/RQsoknKWdB/9L7ZnH9O7JPgeYnxCOJwPkh/GbNr0VsQtJAoGBAOjI\nob+5am6h9gMGzE0TKSkMDan9oc56/pL3JAWTxs/Oo3GoSRTJgAZABAmz2Mr4Xw4T\ns+XIhnYa+JjpPduBV0dxtb8Z3aiseObZbiRVcMIgi4x2bw0BJuMD53L6kT2AI9/u\n2K4GSGhhLPxLgxEOajP6mleRKS0sdqo9Vv91w1kdAoGAVJlK7oKQ/fAMJARyXg/m\ntOaozXmBPoEUWuYUgY0nMuKU2KK3RD9VQHeV0KXMuxX4evq7cz+nwKXNT9FV2SMY\n6xZXcH3bt7hPqvMhuMRufX7eFtVstT+LonJZOgJulSZUVNhetNz+ugo3RSLwKaSS\n2LwYUD4bf5cThMSoNMn+RE4=\n-----END PRIVATE KEY-----\n",
-  "client_email": "dialogflow-vmummg@plusbot-bnqe.iam.gserviceaccount.com",
-  "client_id": "110234796395367081712",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-vmummg%40plusbot-bnqe.iam.gserviceaccount.com"
+  '<yourgoogleservice>'
 }; // Starts with {"type": "service_account",...
 
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
