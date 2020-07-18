@@ -1,0 +1,107 @@
+{
+    "responseId": "efe000ef-e8f0-4031-a092-6ae6a7a5f733-30902c82",
+    "queryResult": {
+        "queryText": "Book trip",
+        "action": "booktrip.booktrip-custom-2.booktrip-activity-custom",
+        "parameters": {},
+        "allRequiredParamsPresent": true,
+        "fulfillmentMessages": [
+            {
+                "text": {
+                    "text": [
+                        ""
+                    ]
+                }
+            }
+        ],
+        "outputContexts": [
+            {
+                "name": "projects/plusbot-bnqe/agent/sessions/395b8701-48b9-33c1-b676-edb207a5977d/contexts/transfer_params",
+                "parameters": {
+                    "homeperc": "no",
+                    "job_roles": "data science",
+                    "target_country": "Sweden",
+                    "price": "150",
+                    "diff": 7,
+                    "Co2_emission": 409,
+                    "travel_activities": "Personally undertaking an internal audit",
+                    "travel_activities.original": "personally undertaking an internal audit"
+                }
+            },
+            {
+                "name": "projects/plusbot-bnqe/agent/sessions/395b8701-48b9-33c1-b676-edb207a5977d/contexts/booktrip-activity-followup",
+                "lifespanCount": 1,
+                "parameters": {
+                    "travel_activities": "Personally undertaking an internal audit",
+                    "travel_activities.original": "personally undertaking an internal audit"
+                }
+            },
+            {
+                "name": "projects/plusbot-bnqe/agent/sessions/395b8701-48b9-33c1-b676-edb207a5977d/contexts/gather-travel-info",
+                "parameters": {
+                    "geo-city": [
+                        "Stockholm"
+                    ],
+                    "geo-city.original": [
+                        "Stockholm"
+                    ],
+                    "host_entity": "tax",
+                    "host_entity.original": "Tax",
+                    "date-period": {
+                        "startDate": "2020-07-07T00:00:00+02:00",
+                        "endDate": "2020-07-14T23:59:59+02:00"
+                    },
+                    "date-period.original": "From 7 July to 14 July",
+                    "job_roles": "data science",
+                    "job_roles.original": "Data science",
+                    "Travel_Colleagues": [],
+                    "Travel_Colleagues.original": [],
+                    "number": "",
+                    "number.original": "",
+                    "date": "",
+                    "date.original": "",
+                    "Travel_Colleagues1": "",
+                    "Travel_Colleagues1.original": "",
+                    "time": "",
+                    "time.original": "",
+                    "travel_activities": "Personally undertaking an internal audit",
+                    "travel_activities.original": "personally undertaking an internal audit"
+                }
+            },
+            {
+                "name": "projects/plusbot-bnqe/agent/sessions/395b8701-48b9-33c1-b676-edb207a5977d/contexts/__system_counters__",
+                "parameters": {
+                    "no-input": 0,
+                    "no-match": 0
+                }
+            }
+        ],
+        "intent": {
+            "name": "projects/plusbot-bnqe/agent/intents/b73d60e6-c9ab-4c07-a379-e3ab8aecf198",
+            "displayName": "book.trip-activity - custom"
+        },
+        "intentDetectionConfidence": 1,
+        "languageCode": "en"
+    },
+    "originalDetectIntentRequest": {
+        "source": "telegram",
+        "payload": {
+            "data": {
+                "text": "Book trip",
+                "message_id": 4154,
+                "chat": {
+                    "id": "1165649893",
+                    "type": "private"
+                },
+                "from": {
+                    "first_name": "Benjamin",
+                    "language_code": "en",
+                    "last_name": "Oghene",
+                    "id": 1165649893
+                },
+                "date": 1594151208
+            }
+        }
+    },
+    "session": "projects/plusbot-bnqe/agent/sessions/395b8701-48b9-33c1-b676-edb207a5977d"
+}

@@ -20,7 +20,7 @@ const functions = require('firebase-functions');
 const { WebhookClient } = require('dialogflow-fulfillment');
 const { Card, Suggestion } = require('dialogflow-fulfillment');
 const { Payload } = require("dialogflow-fulfillment");
-const apikey = '<apikey>';
+const apikey = '0f8d97f4fcmsh4c760502e8f8225p144410jsn87db86e6de40';
 const requests = require('request');
 var { countries } = require('country-data');
 var rp = require('request-promise');
@@ -28,10 +28,19 @@ const { error } = require('actions-on-google/dist/common');
 var XLSX = require('xlsx');
 const OnetWebService = require('./OnetWebService')
 const { google } = require('googleapis');
-const calendarId = "<calendar ID>"
+const calendarId = "gvuo8kjjeg5ph9no4bf16t81i0@group.calendar.google.com"
 var appointment_type = 'chatbot';
 const serviceAccount = {
-  //<service account from google cloud>
+  "type": "service_account",
+  "project_id": "plusbot-bnqe",
+  "private_key_id": "f7bdc4e5d5cea29865ff9738d56ee82832496ee2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDqqnhwBlEK1PY2\ncjTk9fn5fmew8CWbCS9LKqzCPPW75abEbzgNFiFetktBhCq8XeABRYDdA3ZKAMaK\nbYG8ZjIh+xPW+tGZlJ2DmScb7gqrGXQsmT607WDhxMwCDU6w26f1y9YpZ5mCjgvi\nZ8KYRp2MMFTmNPzT53CIx50WIJp0ZRiGR+x9F03EK9zZ+U1T9YQWMKE9QWpGeLa1\nM56SnNP9sC1bkjPATJXM3kvb5/bquLabkYk6317a2t16zbv0AZtLFgTEsQTUrCar\nf5UZHcPuG8P7w7mhrzPxyzHzo7vOflRafcZYgVCMES+ZGLxMlxsbSawKjF44ezsf\nNtRApx8JAgMBAAECggEABW3evfbDcrz1GlLfmul++FD+nKcds53NiI9q8k5/P/Li\n/hn1ocXgjUSp7pDcfUGtwFHHlrVxC+rDLSo17XIu2D7rGVbxuPwpfcUyFLEX8Zfz\n6mE8RGrWijqnnqeIqcpXMzZdVNVnBZB8QWd1ptjBZeArYq0YqV1qKtv1bDDiae1u\ngZYZ4CsDIi5aByMBL1q4do8qeaYVG/U24lDxXwK2hp3uF38tTIVzXTKcBTNU7UXR\nVnoSufTTQCTizj2kxxIKLf/Riy4i/H3KumiIodYsCYTqC6ceHp8C/CSAHsgm5HZj\nhEtK4UQoIxcPmVSFPMean9YGSYvHOTbVFN8aPDBYdQKBgQD3FWDTmHor7Fxo+boO\nunFhHaaSAGk8nU4EUnyZq6M8KK3Oy9Ka2/oWFkoQO6T9z/XaXP+JQZHZAlNfbYLy\ns+wkW/wdFX7Er3IhHl4NsjU2lb+PbtVwj/Crx4QZqOv7yW0hRrdHNOLB/7VhC3cd\nRhXdAi2wRoyUa9k3h5ZSxfaTJQKBgQDzImAImNMb/Egi4MpP+LbcZEcxq2xfzHvO\nyZD09HfANoU5uZ3y2U5BTXtrUAEa2rr9n+DFQW4S1JSrkw/xcJIxfjD8fmn7J1UV\nQveQ4PgFpuC7WyNsW7cVyzmAVSPG1qGvkGjjlmw3o8BcJFdHbrRVByUqDrLhJHYQ\n+v/BH8HJFQKBgEx+/+VCtcBXgxy1BBd/PY71oRZerjYn9Xl9GDpzWyxK49S8Yc20\nAS9JY1C3RpOWCOW8GRkjhcYL5EgNHZeKgLeZCuruNrsqHkmGn1PaMoNdxVrg04/v\n4HEuagWPuM/RQsoknKWdB/9L7ZnH9O7JPgeYnxCOJwPkh/GbNr0VsQtJAoGBAOjI\nob+5am6h9gMGzE0TKSkMDan9oc56/pL3JAWTxs/Oo3GoSRTJgAZABAmz2Mr4Xw4T\ns+XIhnYa+JjpPduBV0dxtb8Z3aiseObZbiRVcMIgi4x2bw0BJuMD53L6kT2AI9/u\n2K4GSGhhLPxLgxEOajP6mleRKS0sdqo9Vv91w1kdAoGAVJlK7oKQ/fAMJARyXg/m\ntOaozXmBPoEUWuYUgY0nMuKU2KK3RD9VQHeV0KXMuxX4evq7cz+nwKXNT9FV2SMY\n6xZXcH3bt7hPqvMhuMRufX7eFtVstT+LonJZOgJulSZUVNhetNz+ugo3RSLwKaSS\n2LwYUD4bf5cThMSoNMn+RE4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-vmummg@plusbot-bnqe.iam.gserviceaccount.com",
+  "client_id": "110234796395367081712",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-vmummg%40plusbot-bnqe.iam.gserviceaccount.com"
 }; // Starts with {"type": "service_account",...
 
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
@@ -57,54 +66,81 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest(async (request
       console.log("________book trip activity________")
 
       //getting parameters from request
-      let origin_address = request.body.queryResult.outputContexts[2].parameters["geo-city"];
-      var activity = request.body.queryResult.parameters.travel_activities;
-      var target_country = request.body.queryResult.outputContexts[1].parameters.target_country;
-      let Co2_emission = `${request.body.queryResult.outputContexts[1].parameters.Co2_emission} kg`;
-      var diff = request.body.queryResult.outputContexts[1].parameters.diff;
-      var homeperc = request.body.queryResult.outputContexts[1].parameters.homeperc;
-      var price = request.body.queryResult.outputContexts[1].parameters.price;
-      var job_roles = request.body.queryResult.outputContexts[1].parameters.job_roles;
-      // let flight_time = request.body.queryResult.outputContexts[1].parameters.flight_time;
-      // let time = flight_time.slice(0, 5);
-      let time = '4 h 30min';
-      // let Co2_emission = '125kg';
+      var nametrip = request.body.session + '/contexts/booktrip-followup';
+      var nametransfer = request.body.session + '/contexts/transfer_params';
+      var displaydata = {};
 
-      var pwd = 'This trip would require a social security certificate, a PWD registration, and a health screening which I can arrange for you. No work permit and no payroll withholding will be needed.';
-      var pwd_p = await need_pwd(activity, target_country, diff);
+      console.log(`nametrip: ${nametrip}`);
+      var array = request.body.queryResult.outputContexts;
+
+      await asyncForEach(array, async (element) => {
+        switch (element.name) {
+          case nametrip:
+            var origin_address = element.parameters["geo-city"];
+            displaydata.origin_address = origin_address;
+            break;
+          case nametransfer:
+            var target_country = element.parameters.target_country;
+            displaydata.target_country = target_country;
+            console.log(`asyncforeach `);
+            let Co2_emission = `${element.parameters.Co2_emission} kg`;
+            displaydata.Co2_emission = Co2_emission;
+            var diff = element.parameters.diff;
+            displaydata.diff = diff;
+            var homeperc = element.parameters.homeperc;
+            displaydata.homeperc = homeperc;
+            var price = element.parameters.price;
+            displaydata.price = price;
+            var job_roles = element.parameters.job_roles;
+            displaydata.job_roles = job_roles;
+            break;
+          default:
+            break;
+        }
+        console.log(`asyncforeach account `);
+      });
+
+
+      let time = '4 h 30min';
+      var activity = request.body.queryResult.parameters.travel_activities;
+      // let Co2_emission = '125kg';
+      console.log(`after asyncforeach ${displaydata.target_country},,,,,,,,,${displaydata.target_country},,,,,,,,,,${displaydata} `);
+
+      var pwd = 'This trip would require a social security certificate, a health screening which I can arrange for you. No payroll withholding will be needed.';
+      var pwd_p = await need_pwd(activity, displaydata.target_country, displaydata.diff);
       var npwd = pwd_p.n_pwd;
       var period = pwd_p.period;
       // determine pwd and remotely(workhome) is needed or not
-      switch (homeperc) {
+      switch (displaydata.homeperc) {
         case 'yes':
           if (npwd) {
-            agent.add(pwd);
+            // agent.add(pwd);
             // agent.add(`Immi = ${pwd_p.immi}`);
-            (pwd_p.immi == 'NP') ? agent.add(`An immigration work permit is not required and pwd is needed if the traveller is there more than ${period} days`) : agent.add(`An Immigration work permit will be required and pwd is needed if the traveller is there more than ${period} days`);
-            agent.add(` ${origin_address} flight cost is ${price} USD.`);
+            (pwd_p.immi == 'NP') ? agent.add(`An immigration work permit is not required and pwd is required because you will be in ${displaydata.origin_address} more than ${period} days. `) : agent.add(`An Immigration work permit will be required and pwd is required because you will be in ${displaydata.origin_address}  more than ${period} days. `);
+            // agent.add(` ${displaydata.origin_address} flight cost is ${displaydata.price} USD.`);
             agent.add(new Suggestion('Book trip'));
             agent.add(new Suggestion('Request formal assignment'));
           } else {
-            (pwd_p.immi == 'NP') ? agent.add(`An immigration work permit is not required and pwd is needed if the traveller is there more than ${period} days`) : agent.add(`An Immigration work permit will be required  and pwd is needed if the traveller is there more than ${period} days`);
-            agent.add(`the cheapest ${origin_address} flight cost is ${price} $.`);
+            (pwd_p.immi == 'NP') ? agent.add(`An immigration work permit is not required and no PWD registration is required because you will be there for less than ${period} days`) : agent.add(`An Immigration work permit will be required and no PWD registration is required because you will be there for less than ${period} days`);
+            // agent.add(`the cheapest ${displaydata.origin_address} flight cost is ${displaydata.price} $.`);
             agent.add(new Suggestion('Book trip'));
             agent.add(new Suggestion('Request formal assignment'));
           }
           break;
         case 'no':
           if (npwd) {
-            agent.add(pwd);
-            (pwd_p.immi == 'NP') ? agent.add(`An immigration work permit is not required and pwd is needed if the traveller is there more than ${period} days`) : agent.add(`An Immigration work permit will be required and pwd is needed if the traveller is there more than ${period} days`);
+            // agent.add(pwd);
+            (pwd_p.immi == 'NP') ? agent.add(`An immigration work permit is not required and pwd is required because you will be in ${displaydata.origin_address} more than ${period} days. `) : agent.add(`An Immigration work permit will be required and pwd is required because you will be in ${displaydata.origin_address} more than ${period} days. `);
             const card = new Card("Alternative options");
-            card.setText(`Projects relating to ${job_roles} can usually be completed remotely (100% of historic cases). It could save  ${price} $ in costs, and ${Co2_emission} of CO2 emissions if you avoid this journey.Should I book the trip, explore remote working options, or request a formal assignment to ${origin_address}?`);
+            card.setText(`Projects relating to ${displaydata.job_roles} can usually be completed remotely (100% of historic cases). It could save ${displaydata.Co2_emission} of CO2 emissions if you avoid this journey.Should I book the trip, explore remote working options, or request a formal assignment to ${displaydata.origin_address}?`);
             card.setButton({ text: 'Explore Remote Working', url: "https://pwcuk.cobrainer.com/create-job-posting" });
             agent.add(card);
             agent.add(new Suggestion('Book trip'));
             agent.add(new Suggestion('Request formal assignment'));
           } else {
-            (pwd_p.immi == 'NP') ? agent.add(`An immigration work permit is not required and pwd is needed if the traveller is there more than ${period} days`) : agent.add(`An Immigration work permit will be required and pwd is needed if the traveller is there more than ${period} days`);
+            (pwd_p.immi == 'NP') ? agent.add(`An immigration work permit is not required and no PWD registration is required because you will be there for less than ${period} days. `) : agent.add(`An Immigration work permit will be required and no PWD registration is required because you will be there for less than ${period} days.`);
             const card = new Card("Alternative options");
-            card.setText(`Projects relating to ${job_roles} can usually be completed remotely(100 % of historic cases).It could save ${price} $ in costs, and ${Co2_emission} of CO2 emissions if you avoid this journey.Should I book the trip, explore remote working options, or request a formal assignment to ${origin_address}?`);
+            card.setText(`Projects relating to ${displaydata.job_roles} can usually be completed remotely(100 % of historic cases).It could save ${displaydata.Co2_emission} of CO2 emissions if you avoid this journey.Should I book the trip, explore remote working options, or request a formal assignment to ${displaydata.origin_address}?`);
             card.setButton({ text: 'Explore Remote Working', url: "https://pwcuk.cobrainer.com/create-job-posting" });
             agent.add(card);
             agent.add(new Suggestion('Book trip'));
@@ -113,6 +149,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest(async (request
           break;
 
         default:
+          agent.add(`sorry, can you input data for trip again?`)
           break;
       }
 
@@ -165,22 +202,35 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest(async (request
   async function makeBooktrip(agent) {
     console.log("makeBooktrip");
     var startDate;
+    var endDate;
     var target_address;
-    if (typeof request.body.queryResult.outputContexts[1].parameters["date-period"] == 'undefined') {
-      startDate = request.body.queryResult.outputContexts[0].parameters["date-period"].startDate;
-      target_address = request.body.queryResult.outputContexts[0].parameters["geo-city"];
-    } else {
-      startDate = request.body.queryResult.outputContexts[1].parameters["date-period"].startDate;
-      target_address = request.body.queryResult.outputContexts[1].parameters["geo-city"];
-    }
+
+    var gather = request.body.session + '/contexts/gather-travel-info';
+    var followup = request.body.session + '/contexts/booktrip-activity-followup';
+    // var nametransfer = request.body.session + '/contexts/transfer_params';
+    var array = request.body.queryResult.outputContexts;
+
+    await asyncForEach(array, async (element) => {
+      if (element.name == followup && typeof element.parameters["date-period"] != 'undefined') {
+        console.log(`followup ${typeof element.parameters["date-period"]}`);
+        startDate = element.parameters["date-period"].startDate;
+        endDate = element.parameters["date-period"].endDate;
+        target_address = element.parameters["geo-city"];
+      }
+      else if (element.name == gather && typeof element.parameters["date-period"] != 'undefined') {
+        console.log(`gather ${typeof element.parameters["date-period"]}`);
+        startDate = element.parameters["date-period"].startDate;
+        endDate = element.parameters["date-period"].endDate;
+        target_address = element.parameters["geo-city"];
+      }
+    });
+
+
+
 
     const dateTimeStart = new Date(Date.parse(startDate.split('T')[0] + 'T' + startDate.split('T')[1].split('+')[0] + timeZoneOffset));
-    const dateTimeEnd = new Date(new Date(dateTimeStart).setHours(dateTimeStart.getHours() + 1));
+    const dateTimeEnd = new Date(Date.parse(endDate.split('T')[0] + 'T' + endDate.split('T')[1].split('+')[0] + timeZoneOffset));
     console.log(`starttime: ${dateTimeStart}, endtime: ${dateTimeEnd}`);
-    const appointmentTimeString = dateTimeStart.toLocaleString(
-      'en-US',
-      { month: 'long', day: 'numeric', hour: 'numeric', timeZone: timeZone }
-    );
 
     // Check the availibility of the time, and make an appointment if there is time on the calendar
     return createCalendarEvent(dateTimeStart, dateTimeEnd, target_address).then(() => {
@@ -226,6 +276,8 @@ async function get_price(origin, target) {
         var target_country = countries[countrycode].name;
 
         // getting IATA code of origin address
+
+        /*
         var origin_latitude = body.stops[0].latitude;
         var origin_longitude = body.stops[0].longitude;
         var origin_IATA_url = 'http://iatageo.com/getCode/' + origin_latitude + '/' + origin_longitude;
@@ -254,7 +306,7 @@ async function get_price(origin, target) {
         console.log(`res_target url for getting IATA code ${options_target.url}`);
         var res_target = await rp(options_target);
         console.log(`res_target ${res_target}`);
-        var target_IATA_code = JSON.parse(res_target).IATA;
+        var target_IATA_code = JSON.parse(res_target).IATA;  */
 
 
         /*
@@ -479,7 +531,7 @@ function createCalendarEvent(dateTimeStart, dateTimeEnd, appointment_type) {
       timeMin: dateTimeStart.toISOString(),
       timeMax: dateTimeEnd.toISOString()
     }, (err, calendarResponse) => {
-      console.log(`response: ${calendarResponse.data.items}`);
+      console.log(`response: ok`);
 
       // Check if there is a event already on the Calendar
       if (err || calendarResponse.data.items.length > 0) {
@@ -491,7 +543,7 @@ function createCalendarEvent(dateTimeStart, dateTimeEnd, appointment_type) {
           auth: serviceAccountAuth,
           calendarId: calendarId,
           resource: {
-            summary: 'Trip book to ' + appointment_type, description: 'travel to ' + appointment_type,
+            summary: 'Trip to ' + appointment_type, description: 'travel to ' + appointment_type,
             start: { dateTime: dateTimeStart },
             end: { dateTime: dateTimeEnd }
           }
@@ -504,3 +556,9 @@ function createCalendarEvent(dateTimeStart, dateTimeEnd, appointment_type) {
   });
 }
 
+
+async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
+}
