@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "actions-on-google": "^2.2.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "country-data": "0.0.31",
     "csvtojson": "^2.0.10",
     "dialogflow": "^0.6.0",
